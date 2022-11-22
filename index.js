@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
     const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
-    var seconds = secondsDatetime+15;
+    var seconds = secondsDatetime+5;
     const someDate = new Date(datetime.getFullYear(),datetime.getMonth(),datetime.getDate(),
     datetime.getHours(),datetime.getMinutes(),seconds);
     const data = {
