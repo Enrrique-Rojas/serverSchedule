@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) =>{
-    res.send("INICIO");
+    res.send("INICIO 2");
 });
 
 const port = process.env.port || 8080;
