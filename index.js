@@ -8,7 +8,11 @@ app.use('*', cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    const someDate = new Date('2022-11-22T21:56:00');
+    const datetime = new Date();
+    var secondsDatetime = datetime.getSeconds();
+    var seconds = secondsDatetime+15;
+    const someDate = new Date(datetime.getFullYear(),datetime.getMonth(),datetime.getDate(),
+    datetime.getHours(),datetime.getMinutes(),seconds);
     const data = {
         'tipoUsuario':'3',
         'package':'com.tuclinika.tuclinika',
@@ -26,7 +30,7 @@ app.get('/', (req, res) => {
             console.log(err);
         })
     });
-    res.send("BIEN HECHO");
+    res.send(someDate.toISOString());
 })
 
 /* app.get('/', (req, res) =>{
