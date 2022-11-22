@@ -30,8 +30,8 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) =>{
-    const start = Date.now();
-    res.send("INICIO 2",start);
+    var datetime = new Date();
+    res.send("INICIO 2 ",datetime);
 });
 
 const port = process.env.port || 8080;
