@@ -29,6 +29,10 @@ app.post('/', (req, res) => {
     res.send("API is up.");
 })
 
+app.get('/', (req, res) =>{
+    res.send("INICIO");
+});
+
 app.listen(8080, () => {
     console.log('API is running');
 })
