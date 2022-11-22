@@ -29,7 +29,7 @@ app.post('/', (req, res) => {
     res.send("API is up.");
 })
 
-app.get('/', (req, res) =>{
+app.get('/inicio', (req, res) =>{
     res.send("INICIO");
 });
 
