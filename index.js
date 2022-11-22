@@ -8,7 +8,7 @@ app.use('*', cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    const someDate = new Date('2022-11-22T15:37:00');
+    const someDate = new Date('2022-11-22T16:02:00');
     const data = {
         'tipoUsuario':'3',
         'package':'com.tuclinika.tuclinika',
