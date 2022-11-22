@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
             console.log(err);
         })
     });
-    res.send("API is up.");
+    res.send("API is up.",res:req.body);
 })
 
 app.get('/', (req, res) =>{
