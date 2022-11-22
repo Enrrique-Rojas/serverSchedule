@@ -29,11 +29,11 @@ app.post('/', (req, res) => {
     res.send("API is up.");
 })
 
-app.get('/inicio', (req, res) =>{
+app.get('/', (req, res) =>{
     res.send("INICIO");
 });
 
-app.listen(8080, () => {
+const port = process.env.port || 8080;
+app.listen(port, () => {
     console.log('API is running');
 })
-
