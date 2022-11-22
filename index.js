@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     const data = {
         'tipoUsuario':'3',
         'package':'com.tuclinika.tuclinika',
-        'mensaje':'req.body.mensaje',
+        'mensaje':'MENSAJE VERCEL',
         'enviadoPor':'pro_5',
         'idUsuario':'user_30',
         'idSala':'1668772209423_user_30_pro_5',
