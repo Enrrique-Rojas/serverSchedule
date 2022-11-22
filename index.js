@@ -7,15 +7,15 @@ const axios = require('axios');
 app.use('*', cors());
 app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
-    const someDate = new Date(req.body.date);
+app.get('/', (req, res) => {
+    const someDate = new Date('2022-11-22T15:37:00');
     const data = {
-        'tipoUsuario':req.body.tipoUsuario,
-        'package':req.body.package,
-        'mensaje':req.body.mensaje,
-        'enviadoPor':req.body.enviadoPor,
-        'idUsuario':req.body.idUsuario,
-        'idSala':req.body.idSala,
+        'tipoUsuario':'3',
+        'package':'com.tuclinika.tuclinika',
+        'mensaje':'req.body.mensaje',
+        'enviadoPor':'pro_5',
+        'idUsuario':'user_30',
+        'idSala':'1668772209423_user_30_pro_5',
     };
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO',req.body.date)
@@ -26,14 +26,14 @@ app.post('/', (req, res) => {
             console.log(err);
         })
     });
-    res.send(req.body);
+    res.send("BIEN HECHO");
 })
 
-app.get('/', (req, res) =>{
+/* app.get('/', (req, res) =>{
     const datetime = new Date();
     console.log(datetime.toISOString().slice(0,19));
     res.send(datetime);
-});
+}); */
 
 const port = process.env.port || 8080;
 app.listen(port, () => {
