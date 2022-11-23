@@ -19,13 +19,13 @@ app.get('/', (req, res) => {
         'idSala':'1668772209423_user_30_pro_5',
     };
     schedule.scheduleJob(someDate,()=>{
-        console.log('IMPRIMIENDO METODO',req.body.date)
+        console.log('IMPRIMIENDO METODO');
         axios.post("https://tuclinika.net/api/notificacionpush",data).then(res=>{
             console.log('STATUS CODE:',res.status);
             console.log('BODY:',res.data);
         }).catch(err=>{
             console.log(err);
-        })
+        });
     });
     res.send(someDate.toISOString());
 })
