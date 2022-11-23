@@ -1,11 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
 const app = express();
 const schedule = require('node-schedule');
 const axios = require('axios');
-app.use('*', cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.get('/', (req, res) => {
     const datetime = new Date();
@@ -39,7 +36,7 @@ app.get('/', (req, res) => {
     res.send(datetime);
 }); */
 
-const port = process.env.port || 8080;
+const port = process.env.port || 9001;
 app.listen(port, () => {
     console.log('API is running');
 })
