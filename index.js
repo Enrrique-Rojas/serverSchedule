@@ -18,9 +18,13 @@ app.get('/', (req, res) => {
         'idUsuario':'user_30',
         'idSala':'1668772209423_user_30_pro_5',
     };
+    const headers = {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+    }
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO');
-        axios.post("https://tuclinika.net/api/notificacionpush",data).then(res=>{
+        axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers,httpsAgent: new https.Agent({ keepAlive: true })}).then(res=>{
             console.log('STATUS CODE:',res.status);
             console.log('BODY:',res.data);
         }).catch(err=>{
