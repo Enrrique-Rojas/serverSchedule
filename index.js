@@ -35,11 +35,11 @@ app.get('/', (req, res) => {
     res.send(someDate.toISOString());
 })
 
-/* app.get('/', (req, res) =>{
+app.get('/emp', (req, res) =>{
     const datetime = new Date();
     console.log(datetime.toISOString().slice(0,19));
     res.send(datetime);
-}); */
+});
 
 const port = process.env.port || 9001;
 app.listen(port, () => {
