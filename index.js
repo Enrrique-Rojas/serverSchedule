@@ -6,7 +6,7 @@ const axios = require('axios');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    const datetime = new Date();
+    /*const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
     var seconds = secondsDatetime+5;
     const someDate = new Date(datetime.getFullYear(),datetime.getMonth(),datetime.getDate(),
@@ -18,6 +18,15 @@ app.get('/', (req, res) => {
         'enviadoPor':'pro_5',
         'idUsuario':'user_30',
         'idSala':'1668772209423_user_30_pro_5',
+    };*/
+    const someDate = new Date(req.body.date)
+    const data = {
+        'tipoUsuario':req.body.tipoUsuario,
+        'package':req.body.package,
+        'mensaje':req.body.mensaje,
+        'enviadoPor':req.body.enviadoPor,
+        'idUsuario':req.body.idUsuario,
+        'idSala':req.body.idSala,
     };
     const headers = {
         'Content-Type': 'application/json',
@@ -34,12 +43,6 @@ app.get('/', (req, res) => {
     });
     res.send(someDate.toISOString());
 })
-
-app.get('/emp', (req, res) =>{
-    const datetime = new Date();
-    console.log(datetime.toISOString().slice(0,19));
-    res.send(datetime);
-});
 
 const port = process.env.port || 9001;
 app.listen(port, () => {
