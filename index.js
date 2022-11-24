@@ -35,12 +35,12 @@ app.post('/', (req, res) => {
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO');
         console.log(data);
-        /*axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
+        axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
             console.log('STATUS CODE:',res.status);
             console.log('BODY:',res.data);
         }).catch(err=>{
             console.log(err);
-        });*/
+        });
     });
     //res.send(someDate.toISOString());
     return res.status(200).send({ estado: someDate.toISOString()});
