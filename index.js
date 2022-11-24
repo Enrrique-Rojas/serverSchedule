@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const schedule = require('node-schedule');
 const axios = require('axios');
-const https = require('http');
+//const https = require('http');
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     }
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO');
-        axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers,httpsAgent: new https.Agent({ keepAlive: true })}).then(res=>{
+        axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
             console.log('STATUS CODE:',res.status);
             console.log('BODY:',res.data);
         }).catch(err=>{
