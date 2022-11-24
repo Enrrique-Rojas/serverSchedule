@@ -5,7 +5,7 @@ const axios = require('axios');
 //const https = require('http');
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     /*const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
     var seconds = secondsDatetime+5;
