@@ -42,7 +42,8 @@ app.post('/', (req, res) => {
             console.log(err);
         });*/
     });
-    res.send(someDate.toISOString());
+    //res.send(someDate.toISOString());
+    return res.status(200).send({ estado: someDate.toISOString()});
 })
 
 const port = process.env.port || 9001;
