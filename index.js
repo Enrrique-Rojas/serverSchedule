@@ -7,7 +7,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     return res.status(200).send({ estado: "INGRESE AL REQUEST");
-}
+})
+
 app.post('/', (req, res) => {
     const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
