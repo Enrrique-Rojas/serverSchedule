@@ -5,12 +5,8 @@ const axios = require('axios');
 //const https = require('http');
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    return res.status(200).send({ estado: "INGRESE AL REQUEST");
-});
-
 app.post('/', (req, res) => {
-    const datetime = new Date();
+    /*const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
     var seconds = secondsDatetime+5;
     const someDate = new Date(datetime.getFullYear(),datetime.getMonth(),datetime.getDate(),
@@ -22,20 +18,8 @@ app.post('/', (req, res) => {
         'enviadoPor':'pro_5',
         'idUsuario':'user_30',
         'idSala':'1668772209423_user_30_pro_5',
-    };
-    const headers = {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "*",
-    };
-    axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
-            console.log('STATUS CODE:',res.status);
-            console.log('BODY:',res.data);
-            return res.status(200).send({ estado: res.data});
-        }).catch(err=>{
-            return res.status(200).send({ estado: err});
-        });
-   
-    /*const someDate = new Date(req.body.date)
+    };*/
+    const someDate = new Date(req.body.date)
     const data = {
         'tipoUsuario':req.body.tipoUsuario,
         'package':req.body.package,
@@ -47,20 +31,19 @@ app.post('/', (req, res) => {
     const headers = {
         'Content-Type': 'application/json',
         "Access-Control-Allow-Origin": "*",
-    };
+    }
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO');
         console.log(data);
         axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
             console.log('STATUS CODE:',res.status);
             console.log('BODY:',res.data);
-            return res.status(200).send({ estado: res.data});
         }).catch(err=>{
-            return res.status(200).send({ estado: err});
+            console.log(err);
         });
     });
     //res.send(someDate.toISOString());
-    return res.status(200).send({ estado: someDate.toISOString()});*/
+    return res.status(200).send({ estado: someDate.toISOString()});
 })
 
 const port = process.env.port || 9001;
