@@ -5,7 +5,7 @@ const axios = require('axios');
 //const https = require('http');
 app.use(express.json());
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
     return res.status(200).send({ estado: "INGRESE AL REQUEST");
 }
 app.post('/', (req, res) => {
