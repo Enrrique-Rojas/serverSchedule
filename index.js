@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     return res.status(200).send({ estado: "INGRESE AL REQUEST");
-})
+});
 
 app.post('/', (req, res) => {
     const datetime = new Date();
@@ -22,6 +22,10 @@ app.post('/', (req, res) => {
         'enviadoPor':'pro_5',
         'idUsuario':'user_30',
         'idSala':'1668772209423_user_30_pro_5',
+    };
+    const headers = {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
     };
     axios.post("https://tuclinika.net/api/notificacionpush",data,{headers: headers}).then(res=>{
             console.log('STATUS CODE:',res.status);
@@ -43,7 +47,7 @@ app.post('/', (req, res) => {
     const headers = {
         'Content-Type': 'application/json',
         "Access-Control-Allow-Origin": "*",
-    }
+    };
     schedule.scheduleJob(someDate,()=>{
         console.log('IMPRIMIENDO METODO');
         console.log(data);
