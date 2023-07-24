@@ -6,6 +6,9 @@ const axios = require('axios');
 app.use(express.json());
 
 app.post('/', (req, res) => {
+    return res.status(200).send({ estado: "INGRESE AL REQUEST");
+}
+app.post('/', (req, res) => {
     const datetime = new Date();
     var secondsDatetime = datetime.getSeconds();
     var seconds = secondsDatetime+5;
